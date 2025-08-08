@@ -12,8 +12,6 @@ else:
     print("Upload a PDF file")
     exit()
 
-content = data[0].page_content
-# print(content[:100])
 
 from langchain_ollama import OllamaEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -81,9 +79,9 @@ chain = (
     | StrOutputParser()
 )
 
-# res = chain.invoke(input=("what is the document about?",))
+res = chain.invoke(input=("what is the document about?",))
 # res = chain.invoke(
 #     input=("what are the main points as a business owner I should be aware of?",)
 # )
 
-# print(res)
+print(res)
